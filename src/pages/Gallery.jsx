@@ -14,7 +14,7 @@ const Gallery = () => {
       specialization: "Wedding Photography",
       location: "New York, NY",
       services: ["Pre-wedding shoots", "Wedding day coverage", "Photo albums"],
-      priceRange: "$2000 - $5000",
+      priceRange: "2000 - 5000",
       image: image1,
     },
     {
@@ -23,7 +23,7 @@ const Gallery = () => {
       specialization: "Portrait Photography",
       location: "San Francisco, CA",
       services: ["Headshots", "Family portraits", "Pet photography"],
-      priceRange: "$500 - $2000",
+      priceRange: "500 - 2000",
       image:image2,
     },
     {
@@ -32,7 +32,7 @@ const Gallery = () => {
       specialization: "Street and Event Photography",
       location: "Los Angeles, CA",
       services: ["Event coverage", "Cityscapes", "Street art"],
-      priceRange: "$1000 - $3000",
+      priceRange: "1000 - 3000",
       image: image3,
     },
     {
@@ -41,7 +41,7 @@ const Gallery = () => {
       specialization: "Landscape and Nature Photography",
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
-      priceRange: "$1500 - $4000",
+      priceRange: "1500 - 4000",
       image: image4,
     },
     {
@@ -50,7 +50,7 @@ const Gallery = () => {
       specialization: "Landscape and Nature Photography",
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
-      priceRange: "$1500 - $4000",
+      priceRange: "1500 - 4000",
       image: image5,
     },
     {
@@ -59,7 +59,7 @@ const Gallery = () => {
       specialization: "Street and Event Photography",
       location: "Los Angeles, CA",
       services: ["Event coverage", "Cityscapes", "Street art"],
-      priceRange: "$1000 - $3000",
+      priceRange: "1000 - 3000",
       image: image6,
     },
     {
@@ -68,7 +68,7 @@ const Gallery = () => {
       specialization: "Landscape and Nature Photography",
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
-      priceRange: "$1500 - $4000",
+      priceRange: "1500 - 4000",
       image: image1,
     },
     {
@@ -77,7 +77,7 @@ const Gallery = () => {
       specialization: "Landscape and Nature Photography",
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
-      priceRange: "$1500 - $4000",
+      priceRange: "1500 - 4000",
       image: image2,
     },
     {
@@ -86,7 +86,7 @@ const Gallery = () => {
       specialization: "Street and Event Photography",
       location: "Los Angeles, CA",
       services: ["Event coverage", "Cityscapes", "Street art"],
-      priceRange: "$1000 - $3000",
+      priceRange: "1000 - 3000",
       image: image3,
     },
     {
@@ -95,7 +95,7 @@ const Gallery = () => {
       specialization: "Landscape and Nature Photography",
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
-      priceRange: "$1500 - $4000",
+      priceRange: "1500 - 4000",
       image: image4,
     }
     ,{
@@ -104,7 +104,7 @@ const Gallery = () => {
       specialization: "Street and Event Photography",
       location: "Los Angeles, CA",
       services: ["Event coverage", "Cityscapes", "Street art"],
-      priceRange: "$1000 - $3000",
+      priceRange: "1000 - 3000",
       image: image5,
     },
     {
@@ -113,7 +113,7 @@ const Gallery = () => {
       specialization: "Landscape and Nature Photography",
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
-      priceRange: "$1500 - $4000",
+      priceRange: "1500 - 4000",
       image: image6,
     }
   ];

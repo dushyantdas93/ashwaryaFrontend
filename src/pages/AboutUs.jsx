@@ -1,5 +1,5 @@
 import React from 'react'
-import dushyant from "/images/profile.avif"
+import dushyant from "/images/profile.jpg"
 import camera from "/images/camera.jpg";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
@@ -62,7 +62,7 @@ const AboutUs = () => {
             <h1 className="text-xl font-bold">{contactInfo?.name}</h1>
             <h3>{contactInfo.profession}</h3>
             <div className="flex gap-2 justify-center py-2">
-              {icons.map((Icon, index) => (
+              { icons.map((Icon, index) => (
                 <Link to={Icon.url} key={index} target="_blank">
                   {" "}
                   { (

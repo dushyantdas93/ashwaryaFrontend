@@ -14,7 +14,7 @@ const Services = () => {
       specialization: "Wedding Photography",
       location: "New York, NY",
       services: ["Pre-wedding shoots", "Wedding day coverage", "Photo albums"],
-      priceRange: "$2000 - $5000",
+      priceRange: "20000 - 50000",
       image:image1 ,
     },
     {
@@ -23,7 +23,7 @@ const Services = () => {
       specialization: "Portrait Photography",
       location: "San Francisco, CA",
       services: ["Headshots", "Family portraits", "Pet photography"],
-      priceRange: "$500 - $2000",
+      priceRange: "5000 - 20000",
       image: image6,
     },
     {
@@ -32,7 +32,7 @@ const Services = () => {
       specialization: "Street and Event Photography",
       location: "Los Angeles, CA",
       services: ["Event coverage", "Cityscapes", "Street art"],
-      priceRange: "$1000 - $3000",
+      priceRange: "10000 - 30000",
       image: image5,
     },
     {
@@ -41,7 +41,7 @@ const Services = () => {
       specialization: "Landscape and Nature Photography",
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
-      priceRange: "$1500 - $4000",
+      priceRange: "15000 - 40000",
       image: image4,
     },
     {
@@ -50,7 +50,7 @@ const Services = () => {
       specialization: "Wedding Photography",
       location: "New York, NY",
       services: ["Pre-wedding shoots", "Wedding day coverage", "Photo albums"],
-      priceRange: "$2000 - $5000",
+      priceRange: "20000 - 50000",
       image:image1 ,
     },
     {
@@ -59,7 +59,7 @@ const Services = () => {
       specialization: "Portrait Photography",
       location: "San Francisco, CA",
       services: ["Headshots", "Family portraits", "Pet photography"],
-      priceRange: "$500 - $2000",
+      priceRange: "5000 - 20000",
       image: image4,
     },
     {
@@ -68,7 +68,7 @@ const Services = () => {
       specialization: "Street and Event Photography",
       location: "Los Angeles, CA",
       services: ["Event coverage", "Cityscapes", "Street art"],
-      priceRange: "$1000 - $3000",
+      priceRange: "10000 - 30000",
       image: image3,
     },
     {
@@ -77,7 +77,7 @@ const Services = () => {
       specialization: "Landscape and Nature Photography",
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
-      priceRange: "$1500 - $4000",
+      priceRange: "15000 - 40000",
       image: image4,
     },
     {
@@ -86,7 +86,7 @@ const Services = () => {
       specialization: "Wedding Photography",
       location: "New York, NY",
       services: ["Pre-wedding shoots", "Wedding day coverage", "Photo albums"],
-      priceRange: "$2000 - $5000",
+      priceRange: "20000 - 50000",
       image:image1 ,
     },
     {
@@ -95,7 +95,7 @@ const Services = () => {
       specialization: "Portrait Photography",
       location: "San Francisco, CA",
       services: ["Headshots", "Family portraits", "Pet photography"],
-      priceRange: "$500 - $2000",
+      priceRange: "5000 - 20000",
       image: image2,
     },
     {
@@ -104,7 +104,7 @@ const Services = () => {
       specialization: "Street and Event Photography",
       location: "Los Angeles, CA",
       services: ["Event coverage", "Cityscapes", "Street art"],
-      priceRange: "$1000 - $3000",
+      priceRange: "10000 - 30000",
       image: image3,
     },
     {
@@ -113,7 +113,7 @@ const Services = () => {
       specialization: "Landscape and Nature Photography",
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
-      priceRange: "$1500 - $4000",
+      priceRange: "15000 - 40000",
       image: image4,
     },
   ];
@@ -143,7 +143,7 @@ const Services = () => {
                 </h1>
                 <div className="flex lg:gap-2 gap-10 justify-between text-sm">
                   <h1>{item.priceRange}</h1>
-                  <h1>{item.location}</h1>
+                  <h1>Khairagarh</h1>
                 </div>
               </div>
               </div>

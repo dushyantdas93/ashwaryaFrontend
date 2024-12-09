@@ -24,6 +24,11 @@ const FooterLg = () => {
     youtube: import.meta.env.VITE_YOUTUBE,
     facebook: import.meta.env.VITE_FACEBOOK,
     whatsapp: import.meta.env.VITE_WHATSAPP,
+    gmail_dev: import.meta.env.VITE_GMAIL_DEV,
+    instagram_dev: import.meta.env.VITE_INSTAGRAM_DEV,
+    linkedIn_dev: import.meta.env.VITE_LINKEDIN_DEV,
+    youtube_dev: import.meta.env.VITE_YOUTUBE_DEV,
+    facebook_dev: import.meta.env.VITE_FACEBOOK_DEV,
   };
 
   const socialIcons = [
@@ -31,6 +36,13 @@ const FooterLg = () => {
     { icon: IoLogoYoutube, url: contactInfo?.youtube, label: "GitHub" },
     { icon: FaLinkedin, url: contactInfo?.linkedIn, label: "LinkedIn" },
     { icon: FaFacebookSquare, url:contactInfo?.facebook, label: "Hashnode" },
+   
+  ];
+  const socialIcons_dev = [
+    { icon: FaInstagram, url: contactInfo?.instagram_dev, label: "Instagram" },
+    { icon: IoLogoYoutube, url: contactInfo?.youtube_dev, label: "GitHub" },
+    { icon: FaLinkedin, url: contactInfo?.linkedIn_dev, label: "LinkedIn" },
+    { icon: FaFacebookSquare, url:contactInfo?.facebook_dev, label: "Hashnode" },
    
   ];
 
@@ -130,7 +142,11 @@ const FooterLg = () => {
               <p>+91 {contactInfo.contact}, {contactInfo.contact}</p>
             </li>
             <li>
-              <p>{contactInfo?.gmail}</p>
+              <p>
+              <Link to={`mailto:${contactInfo.gmail}?suanbject=Hello I am profession photographer what can i help you`}>
+                {contactInfo?.gmail}
+                </Link>
+                </p>
             </li>
           </ul>
         </div>
@@ -141,20 +157,29 @@ const FooterLg = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center px-5 space-y-4 lg:space-y-0">
           <p className="text-sm">
        {" "}
-            <span className="font-bold">{contactInfo.name}</span>
+       <Link to={"http://dushyantdas93.vercel.app"}>
+            <span className="font-bold underline">Dushyant Manikpuri</span>
+       </Link>
           </p>
-          <ul className="flex space-x-4">
-            {quickLinks.map((link, index) => (
+          <ul className="flex space-x-4 pr-20"> 
+          {socialIcons_dev.map((item, index) => (
               <li key={index}>
-                <Link
-                  to={link.to}
-                  className="text-sm hover:text-gray-400"
-                  aria-label={`Navigate to ${link.name}`}
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-2xl hover:text-gray-400"
+                  aria-label={item.label}
                 >
-                  {link.name}
-                </Link>
+                  <item.icon />
+                </a>
               </li>
             ))}
+            <li>
+            <Link to={`mailto:dushyantmanikpuri072@gmail.com?suanbject=Hello I am Mern Stack developleer what can i help you`} className="underline">
+          Gmail
+        </Link>
+            </li>
           </ul>
         </div>
       </div>
