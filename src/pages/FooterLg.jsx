@@ -143,7 +143,7 @@ const FooterLg = () => {
             </li>
             <li>
               <p>
-              <Link to={`mailto:${contactInfo.gmail}?suanbject=Hello, I want to service of photoshoot`}>
+              <Link to={`mailto:${contactInfo.gmail}?suanbject=Hello, I want to know about your photo shoot service`}>
                 {contactInfo?.gmail}
                 </Link>
                 </p>
