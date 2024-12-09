@@ -1,4 +1,10 @@
 import React from "react";
+import image1 from "/images/image1.jpeg"
+import image2 from "/images/image2.jpg"
+import image3 from "/images/image3.jpeg"
+import image4 from "/images/image4.webp"
+import image5 from "/images/image5.jpeg"
+import image6 from "/images/image6.jpeg"
 
 const Gallery = () => {
   const photographerServices = [
@@ -9,7 +15,7 @@ const Gallery = () => {
       location: "New York, NY",
       services: ["Pre-wedding shoots", "Wedding day coverage", "Photo albums"],
       priceRange: "$2000 - $5000",
-      image: "https://example.com/images/john-doe-photography.jpg",
+      image: image1,
     },
     {
       id: 2,
@@ -18,7 +24,7 @@ const Gallery = () => {
       location: "San Francisco, CA",
       services: ["Headshots", "Family portraits", "Pet photography"],
       priceRange: "$500 - $2000",
-      image: "https://example.com/images/pixel-perfect-studio.jpg",
+      image:image2,
     },
     {
       id: 3,
@@ -27,7 +33,7 @@ const Gallery = () => {
       location: "Los Angeles, CA",
       services: ["Event coverage", "Cityscapes", "Street art"],
       priceRange: "$1000 - $3000",
-      image: "https://example.com/images/urban-lens.jpg",
+      image: image3,
     },
     {
       id: 4,
@@ -36,7 +42,7 @@ const Gallery = () => {
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
       priceRange: "$1500 - $4000",
-      image: "https://example.com/images/golden-hour-captures.jpg",
+      image: image4,
     },
     {
       id: 4,
@@ -45,7 +51,7 @@ const Gallery = () => {
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
       priceRange: "$1500 - $4000",
-      image: "https://example.com/images/golden-hour-captures.jpg",
+      image: image5,
     },
     {
       id: 3,
@@ -54,7 +60,7 @@ const Gallery = () => {
       location: "Los Angeles, CA",
       services: ["Event coverage", "Cityscapes", "Street art"],
       priceRange: "$1000 - $3000",
-      image: "https://example.com/images/urban-lens.jpg",
+      image: image6,
     },
     {
       id: 4,
@@ -63,7 +69,7 @@ const Gallery = () => {
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
       priceRange: "$1500 - $4000",
-      image: "https://example.com/images/golden-hour-captures.jpg",
+      image: image1,
     },
     {
       id: 4,
@@ -72,7 +78,7 @@ const Gallery = () => {
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
       priceRange: "$1500 - $4000",
-      image: "https://example.com/images/golden-hour-captures.jpg",
+      image: image2,
     },
     {
       id: 3,
@@ -81,7 +87,7 @@ const Gallery = () => {
       location: "Los Angeles, CA",
       services: ["Event coverage", "Cityscapes", "Street art"],
       priceRange: "$1000 - $3000",
-      image: "https://example.com/images/urban-lens.jpg",
+      image: image3,
     },
     {
       id: 4,
@@ -90,7 +96,25 @@ const Gallery = () => {
       location: "Seattle, WA",
       services: ["Scenic photoshoots", "Nature documentaries"],
       priceRange: "$1500 - $4000",
-      image: "https://example.com/images/golden-hour-captures.jpg",
+      image: image4,
+    }
+    ,{
+      id: 5,
+      name: "Urban Lens",
+      specialization: "Street and Event Photography",
+      location: "Los Angeles, CA",
+      services: ["Event coverage", "Cityscapes", "Street art"],
+      priceRange: "$1000 - $3000",
+      image: image5,
+    },
+    {
+      id: 6 ,
+      name: "Golden Hour Captures",
+      specialization: "Landscape and Nature Photography",
+      location: "Seattle, WA",
+      services: ["Scenic photoshoots", "Nature documentaries"],
+      priceRange: "$1500 - $4000",
+      image: image6,
     }
   ];
 
@@ -99,13 +123,13 @@ const Gallery = () => {
       <div className="heading py-2">
         <h1 className="text-start text-2xl font-bold">Our Best Gallery</h1>
       </div>
-      <div className=" flex flex-wrap  gap-4  justify-center lg:gap-y-12 lg:justify-around py-10">
+      <div className=" flex flex-wrap   justify-center  lg:justify-around py-10">
         {photographerServices?.map((item, idx) => {
           return (
-            <div className="image-box rounded-lg overflow-hidden bg-white text-center text-2xl font-bold relative border lg:w-1/6">
+            <div className="image-box rounded-lg overflow-hidden bg-white text-center text-2xl font-bold relative border lg:w-1/4">
           
               <div className="img">
-                <img src="images/services-img/1.jpg" alt="" />
+                <img src={item?.image} alt="" />
               </div>
 
             </div>

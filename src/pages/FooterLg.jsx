@@ -8,28 +8,49 @@ import {
   FaGithub,
 } from "react-icons/fa6";
 
+import { IoLogoYoutube } from "react-icons/io";
+import { FaFacebookSquare } from "react-icons/fa";
+
 const FooterLg = () => {
-  const icons = [
-    {
-      socialIcon: FaInstagram,
-      url: "https://www.instagram.com/dushyantdas93/",
-    },
-    {
-      socialIcon: FaGithub,
-      url: "https://github.com/dushyantdas93",
-    },
-    {
-      socialIcon: FaLinkedin,
-      url: "https://www.linkedin.com/in/dushyant-manikpuri-b2433b259/",
-    },
-    {
-      socialIcon: FaHashnode,
-      url: "https://hashnode.com/@dushyantdas93",
-    },
-    {
-      socialIcon: FaMedium,
-      url: "https://medium.com/@dushyantdas93",
-    },
+
+  const contactInfo = {
+    name: import.meta.env.VITE_NAME,
+    profession: import.meta.env.VITE_PROFESSION,
+    address: import.meta.env.VITE_ADDRESS,
+    contact: import.meta.env.VITE_CONTACT,
+    gmail: import.meta.env.VITE_GMAIL,
+    instagram: import.meta.env.VITE_INSTAGRAM,
+    linkedIn: import.meta.env.VITE_LINKEDIN,
+    youtube: import.meta.env.VITE_YOUTUBE,
+    facebook: import.meta.env.VITE_FACEBOOK,
+    whatsapp: import.meta.env.VITE_WHATSAPP,
+  };
+
+  const socialIcons = [
+    { icon: FaInstagram, url: contactInfo?.instagram, label: "Instagram" },
+    { icon: IoLogoYoutube, url: contactInfo?.youtube, label: "GitHub" },
+    { icon: FaLinkedin, url: contactInfo?.linkedIn, label: "LinkedIn" },
+    { icon: FaFacebookSquare, url:contactInfo?.facebook, label: "Hashnode" },
+   
+  ];
+
+  const quickLinks = [
+    { name: "Home", to: "/" },
+    { name: "About", to: "/about" },
+    { name: "Services", to: "/services" },
+    { name: "Video Gallery", to: "/video-gallery" },
+    { name: "Photo Gallery", to: "/photo-gallery" },
+    
+    { name: "Contact Us", to: "/contact" },
+  ];
+
+  const services = [
+    "Wedding",
+    "Pre Wedding ",
+    "Video shooting",
+    "Birthday",
+    "Engagement photo",
+    "College Function",
   ];
 
   return (
@@ -38,22 +59,26 @@ const FooterLg = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-5">
         {/* Logo and About */}
         <div className="space-y-4">
-          <img src="images/logo.png" alt="Logo" className="w-32" />
+          <h1 className="text-2xl font-bold">{contactInfo.name}</h1>
           <p className="text-sm">
-            We provide Wedding Pandal Decoration, Wedding Catering, Full
-            Catering, Birthday Party Organizing, Engagement Party, and Pandal
-            Decoration services.
+            We provide Wedding,
+    Pre Wedding ,
+    Video shooting,
+    Birthday,
+    Engagement photo,
+    College Function.
           </p>
           <ul className="flex space-x-4">
-            {icons.map((icon, index) => (
+            {socialIcons.map((item, index) => (
               <li key={index}>
                 <a
-                  href={icon.url}
+                  href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-2xl hover:text-gray-400"
+                  aria-label={item.label}
                 >
-                  <icon.socialIcon />
+                  <item.icon />
                 </a>
               </li>
             ))}
@@ -62,71 +87,50 @@ const FooterLg = () => {
 
         {/* Quick Links */}
         <div>
-          <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
-          <div className="flex flex-col space-y-2 items-start">
-            <button className="text-sm hover:text-gray-400">Home</button>
-            <button className="text-sm hover:text-gray-400">About</button>
-            <button className="text-sm hover:text-gray-400">Services</button>
-            <button className="text-sm hover:text-gray-400">
-              Video Gallery
-            </button>
-            <button className="text-sm hover:text-gray-400">
-              Photo Gallery
-            </button>
-            <button className="text-sm hover:text-gray-400">Enquiry</button>
-            <button className="text-sm hover:text-gray-400">Contact Us</button>
-          </div>
-        </div>
+  <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
+  <ul className="space-y-2">
+    {quickLinks.map((link, index) => (
+      <li key={index}>
+        <Link
+          to={link.id} // Corresponds to the ID of the target section
+          smooth={true} // Enables smooth scrolling
+          duration={500} // Duration of scroll in milliseconds
+          className="text-sm hover:text-gray-400 cursor-pointer"
+          aria-label={`Scroll to ${link.name}`}
+        >
+          {link.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
         {/* Services */}
         <div>
           <h2 className="text-lg font-semibold mb-4">Services</h2>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link to="#" className="hover:text-gray-400">
-                Wedding Pandal Decoration
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="hover:text-gray-400">
-                Wedding Catering
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="hover:text-gray-400">
-                Full Catering
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="hover:text-gray-400">
-                Birthday Party Organizing
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="hover:text-gray-400">
-                Engagement Party
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="hover:text-gray-400">
-                Pandal Decoration
-              </Link>
-            </li>
+          <ul className="space-y-2">
+            {services.map((service, index) => (
+              <li key={index}>
+                <Link to="#" className="text-sm hover:text-gray-400">
+                  {service}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Address */}
         <div>
-          <h2 className="text-lg font-semibold mb-4">Address</h2>
+          <h2 className="text-lg font-semibold mb-4">Address & Contact</h2>
           <ul className="space-y-4 text-sm">
             <li>
-              <p>Dhanbad, Jharkhand.</p>
+              <p>{contactInfo.address}</p>
             </li>
             <li>
-              <p>+91 8877887627, 9304768892</p>
+              <p>+91 {contactInfo.contact}, {contactInfo.contact}</p>
             </li>
             <li>
-              <p>shrishyamevents47@gmail.com</p>
+              <p>{contactInfo?.gmail}</p>
             </li>
           </ul>
         </div>
@@ -136,30 +140,21 @@ const FooterLg = () => {
       <div className="border-t border-gray-700 mt-8 pt-5">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center px-5 space-y-4 lg:space-y-0">
           <p className="text-sm">
-            Copyright © 2023 All Rights Reserved by{" "}
-            <span className="font-bold">Shrishya Events</span>
+       {" "}
+            <span className="font-bold">{contactInfo.name}</span>
           </p>
           <ul className="flex space-x-4">
-            <li>
-              <Link to="#" className="text-sm hover:text-gray-400">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="text-sm hover:text-gray-400">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="text-sm hover:text-gray-400">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="text-sm hover:text-gray-400">
-                Contact
-              </Link>
-            </li>
+            {quickLinks.map((link, index) => (
+              <li key={index}>
+                <Link
+                  to={link.to}
+                  className="text-sm hover:text-gray-400"
+                  aria-label={`Navigate to ${link.name}`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

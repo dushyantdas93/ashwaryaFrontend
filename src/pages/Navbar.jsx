@@ -8,8 +8,13 @@ import {
   FaPhoneAlt,
   FaInfoCircle,
 } from "react-icons/fa"; // Import React Icons
+import { Link } from "react-scroll"; // Import Link from react-scroll
+
+import { IoClose } from "react-icons/io5";
 
 const Navbar = () => {
+  const contactInfo = {
+    name: import.meta.env.VITE_NAME }
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Toggle the menu visibility on small screens
@@ -17,140 +22,76 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Menu items array for consistency
+  const menuItems = [
+    { name: "Home", icon: FaHome, to: "home" },
+    { name: "Service", icon: FaCog, to: "services" },
+    { name: "Gallery", icon: FaImages, to: "gallery" },
+    { name: "Contact", icon: FaPhoneAlt, to: "contact" },
+    { name: "About Us", icon: FaInfoCircle, to: "about-us" },
+    
+    { name: "Video Gallery", icon: FaVideo, to: "video-gallery" },
+  ];
+
   return (
-    <nav className="bg-gray-900 text-white shadow-md fixed w-full top-0 z-50">
+    <nav className="bg-gray-900 text-white  fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <div className="text-2xl font-bold">
+           {contactInfo?.name}
+          </div>
+
+          {/* Hamburger Menu (Mobile) */}
+          <div className="sm:hidden">
             <button
               onClick={toggleMenu}
               className="text-white p-2 focus:outline-none"
+              aria-expanded={isMenuOpen}
+              aria-label="Toggle navigation"
             >
-              <FaBars className="h-6 w-6" />
+             {!isMenuOpen ? <FaBars className="h-6 w-6" /> :
+              <IoClose className="h-6 w-6 " />}
             </button>
-          </div>
-          <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-            <a href="#" className="text-2xl font-bold">
-              {/* <img
-                src="your-logo.png" // Replace with your logo's path
-                alt="Logo"
-                className="h-10"
-              /> */}
-                          Ashwarya Manik
-            </a>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden sm:block sm:ml-6">
-            <div className="flex space-x-4">
-              <a
-                href="#home"
-                className="text-white flex items-center space-x-2 hover:text-gray-400"
+          <div className="hidden sm:flex sm:space-x-4">
+            {menuItems.map(({ name, icon: Icon, to }) => (
+              <Link
+                key={name}
+                to={to}
+                smooth={true}
+                duration={500}
+                className="flex items-center space-x-2 hover:text-gray-400 cursor-pointer"
               >
-                <FaHome className="lg:hidden"/>
-                <span>Home</span>
-              </a>
-              <a
-                href="#services"
-                className="text-white flex items-center space-x-2 hover:text-gray-400"
-              >
-                <FaCog className="lg:hidden"/>
-                <span>Service</span>
-              </a>
-              <a
-                href="#gallery"
-                className="text-white flex items-center space-x-2 hover:text-gray-400"
-              >
-                <FaImages className="lg:hidden"/>
-                <span>Gallery</span>
-              </a>
-              <a
-                href="#contact"
-                className="text-white flex items-center space-x-2 hover:text-gray-400"
-              >
-                <FaPhoneAlt className="lg:hidden"/>
-                <span>Contact</span>
-              </a>
-              <a
-                href="#about-us"
-                className="text-white flex items-center space-x-2 hover:text-gray-400"
-              >
-                <FaInfoCircle className="lg:hidden"/>
-                <span>About Us</span>
-              </a>
-              <a
-                href="#enquiry"
-                className="text-white flex items-center space-x-2 hover:text-gray-400"
-              >
-                <FaPhoneAlt className="lg:hidden"/>
-                <span>Enquiry</span>
-              </a>
-              <a
-                href="#video-gallery"
-                className="text-white flex items-center space-x-2 hover:text-gray-400"
-              >
-                <FaVideo className="lg:hidden"/>
-                <span>Video Gallery</span>
-              </a>
-            </div>
+                <Icon className="lg:hidden " />
+                <span className="font-bold">{name}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div className={`${isMenuOpen ? "block" : "hidden"} sm:hidden`}>
-        <div className="px-2 pt-2 pb-3 space-y-1">
-          {/* <a
-            href="#home"
-            className="text-white flex items-center space-x-2 hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
+      <div
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } sm:hidden bg-gray-800 px-4 pb-3 space-y-2`}
+      >
+        {menuItems.map(({ name, icon: Icon, to }) => (
+          <Link
+            key={name}
+            to={to}
+            smooth={true}
+            duration={500}
+            className="flex items-center space-x-2 text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
+            onClick={() => setIsMenuOpen(false)}
           >
-            <FaHome />
-            <span>Home</span>
-          </a>
-          <a
-            href="#services"
-            className="text-white flex items-center space-x-2 hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
-          >
-            <FaCog />
-            <span>Service</span>
-          </a>
-          <a
-            href="#gallery"
-            className="text-white flex items-center space-x-2 hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
-          >
-            <FaImages />
-            <span>Gallery</span>
-          </a>
-          <a
-            href="#contact"
-            className="text-white flex items-center space-x-2 hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
-          >
-            <FaPhoneAlt />
-            <span>Contact</span>
-          </a> */}
-          <a
-            href="#about-us"
-            className="text-white flex items-center space-x-2 hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
-          >
-            <FaInfoCircle />
-            <span>About Us</span>
-          </a>
-          <a
-            href="#enquiry"
-            className="text-white flex items-center space-x-2 hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
-          >
-            <FaPhoneAlt />
-            <span>Enquiry</span>
-          </a>
-          <a
-            href="#video-gallery"
-            className="text-white flex items-center space-x-2 hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
-          >
-            <FaVideo />
-            <span>Video Gallery</span>
-          </a>
-        </div>
+            <Icon />
+            <span>{name}</span>
+          </Link>
+        ))}
       </div>
     </nav>
   );
