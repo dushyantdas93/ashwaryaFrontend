@@ -143,7 +143,7 @@ const FooterLg = () => {
             </li>
             <li>
               <p>
-              <Link to={`mailto:${contactInfo.gmail}?suanbject=Hello, I want to know about your photo shoot service`}>
+              <Link to={`mailto:${contactInfo.gmail}?suanbject=Hello, I want to know about your photo shoot services`}>
                 {contactInfo?.gmail}
                 </Link>
                 </p>
@@ -153,7 +153,7 @@ const FooterLg = () => {
       </div>
 
       {/* Footer Bottom Section */}
-      <div className="border-t border-gray-700 mt-8 p-5  ">
+      <div className="border-t border-gray-700 mt-8 p-5 pb-5  ">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center px-5 space-y-4 lg:space-y-0">
           <p className="text-sm">
        {" "}
